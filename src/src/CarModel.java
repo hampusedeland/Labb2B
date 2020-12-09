@@ -10,8 +10,7 @@ public class CarModel {
     }
 
     ArrayList<Vehicle> cars = new ArrayList<>();
-//har problem att få bilarna att bromsa till 0
- //kan bromsa bilarna genom att "stop all cars".
+
     void move(){
         checkingCarsStayInWindow();
         for(Vehicle car : cars){
@@ -19,16 +18,14 @@ public class CarModel {
 
         }
     }
-    public static Saab95 createSaab95(){
-        Saab95 saab95 = new Saab95(2, Color.black,300,1600);
 
-        return saab95;
-    }
+
+    // Göra så storlek beror av modellstorleken. Alltså X och Y under, kanske passa genom controller till vyn.
 
 
     void checkingCarsStayInWindow(){//just nu en manuell metod, alltså hur stort fönstret är får vi ange här
-        for (Vehicle car : cars) { //nedansteående hade kunnat vara en metod
-            if (car.getX() >= 1500 && car.getCurrentDirection().contains("east")) {      //FRÅGA hur vet vi hur stor bilden är, så den studsar på väggen
+        for (Vehicle car : cars) {
+            if (car.getX() >= 1500 && car.getCurrentDirection().contains("east")) {
                 car.turnLeft();
                 car.turnLeft();
             } else if (car.getX() < 0 && car.getCurrentDirection().contains("west")) {
@@ -50,21 +47,19 @@ public class CarModel {
     void gas(int amount){
         double gas = ((double) amount) / 100;
         for(Vehicle car : cars){
-            car.gas(gas); //ska ja anropa spinner och se vad den är
+            car.gas(gas);
         }
     }
     void brake(int amount){
         double brake = ((double) amount) / 100;
         for(Vehicle car: cars){
-            car.brake(brake); //samma visa som över
+            car.brake(brake);
         }
     }
 
     void setTurboOn(){
-        for(Vehicle car : cars){ //Kanske en lista med turboable
-            System.out.println("utanför");
+        for(Vehicle car : cars){
             if (car.hasTurbo()) {
-                System.out.println("innanför");
                 ((Turboable) car).setTurboOn();
             }
         }
@@ -74,7 +69,6 @@ public class CarModel {
             if (car.hasTurbo()) {
                 ((Turboable) car).setTurboOff();
             }
-            //  car.setTurboOff();
         }
     }
     void startCars(){

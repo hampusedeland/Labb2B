@@ -20,7 +20,7 @@ public class CarController {
         this.carmodel=carmodel;
         this.carviewer=carviewer;
 
-        this.speedViewer=speedViewer; //la till
+        this.speedViewer=speedViewer;
         this.carviewer.liftBedButton.addActionListener(new BedUpListener());
         this.carviewer.lowerBedButton.addActionListener(new BedDownListener());
         this.carviewer.turboOnButton.addActionListener(new TurboOnListener());
@@ -67,7 +67,7 @@ public class CarController {
         }
     }
 
-    class BrakeListener implements ChangeListener{ //de här två för spinners
+    class BrakeListener implements ChangeListener{
 
         @Override
         public void stateChanged(ChangeEvent e) {
@@ -160,15 +160,12 @@ public class CarController {
         }
     }
 
-    public class TimerListener implements ActionListener { //Göra if satserna till en metod och anropa, för att göra det snyggare
+    public class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //carviewer.drawPanel.paint(carmodel.getCars());
             carviewer.drawPanel.receiveCars(carmodel.getCars());
             carviewer.drawPanel.repaint();
             speedViewer.updateSpedometer(carmodel.speedometer());
             carmodel.move();
-
-     //HÄR SLUTADE VI
         }
     }
 

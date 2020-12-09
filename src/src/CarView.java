@@ -21,11 +21,6 @@ public class CarView extends JFrame {
     }
 
 
-
-    //JPanel velocityPanel = new JPanel();
-    //JTextField carSpecifier = new JTextField();
-    //JTextField carVelocitySpecifier = new JTextField();
-
     JPanel controlPanel = new JPanel();
 
     JPanel gasPanel = new JPanel();
@@ -41,19 +36,14 @@ public class CarView extends JFrame {
     JButton lowerBedButton = new JButton("Lower Lift Bed");
 
 
-
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
-
 
 
     JButton addsaab95Button = new JButton("Add Saab95");
     JButton addvolvo240Button = new JButton("Add Volvo240");
     JButton addscaniaButton = new JButton("Add Scania");
     JButton addvehicleButton = new JButton("Add Vehicle");
-
-
-
     JButton removeVehicleButton = new JButton("Remove Vehicle");
     private void initComponents(String title) {
 

@@ -6,8 +6,6 @@ public class SpeedViewer extends JFrame {
 
     private static final int X = 400;
     private static final int Y = 400;
-    private int numberOfCars;
-    private ArrayList<Vehicle> bilisar = new ArrayList<>();
     DrawPanel2 drawPanel = new DrawPanel2(X,Y);
 
     JLabel carHolder = new JLabel();
