@@ -36,6 +36,8 @@ public class CarController {
         this.carviewer.addscaniaButton.addActionListener(new ScaniaCreatorListener());
         this.carviewer.addsaab95Button.addActionListener(new Saab95CreatorListener());
         this.carviewer.removeVehicleButton.addActionListener(new RemoveCarListener());
+        //this.carviewer.removeVehicleButton.addActionListener(e->carmodel.removeCar());
+
     }
 
 
@@ -49,7 +51,7 @@ public class CarController {
         @Override
         public void actionPerformed(ActionEvent e) {
             carmodel.removeCar();
-        }
+       }
     }
 
     class StartListener implements ActionListener{

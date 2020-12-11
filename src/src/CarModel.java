@@ -15,7 +15,6 @@ public class CarModel {
         checkingCarsStayInWindow();
         for(Vehicle car : cars){
             car.move();
-
         }
     }
 
